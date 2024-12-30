@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+body {
+    background: linear-gradient(145deg, #005f2f, #8b0000); /* Festive red and green gradient */
+    color: #fefefe;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden; /* Prevent scroll due to falling snow */
+}
+
+.container {
+    background-color: #00421b; /* Deep green background */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0px 10px 30px rgba(0, 64, 27, 0.5);
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #e63946; /* Red border */
+}
+
+/* Futuristic Clock */
+.futuristic-clock {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #00ff87; /* Christmas green clock */
+    text-shadow: 0 0 10px #00ff87, 0 0 20px #00ff87;
+    letter-spacing: 3px;
+}
+
+/* Header */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffd700; /* Gold header */
+    text-shadow: 0px 0px 10px #ffd700;
+}
+
+/* To-Do Input Fields */
+.input-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+input[type="text"],
+input[type="datetime-local"] {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #822020; /* Soft red for inputs */
+    color: #fefefe;
+    font-size: 16px;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="datetime-local"]:focus {
+    background: #9a2c2c;
+}
+
+/* Add Task Button */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #e63946; /* Bright red button */
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.8);
+}
+
+.btn-primary:hover {
+    background-color: #ff4c5b; /* Lighter red on hover */
+}
+
+/* To-Do List */
+#todo-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#todo-list li {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fefefe;
+    font-size: 16px;
+}
+
+#todo-list li button {
+    background: none;
+    border: none;
+    color: #ff6b6b;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#todo-list li button:hover {
+    color: #ff3b3b;
+}
+
+/* Snowflakes Animation */
+@keyframes snowfall {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    animation: snowfall 7s linear infinite;
+    left: 10%; /* Default position */
+}
+
+.snowflake:nth-child(2) {
+    animation-duration: 5s;
+}
+
+.snowflake:nth-child(3) {
+    animation-duration: 8s;
+}
+
+/* Bells Animation */
+.bells {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: #ffd700; 
+    animation: swing 2s ease-in-out infinite;
+}
+
+@keyframes swing {
+    0%, 100% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-50%) rotate(15deg);
+    }
+}
+
+
+.snowman {
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    font-size: 5rem;
+    text-align: center;
+}
+
+
+.santa {
+    position: absolute;
+    bottom: 20px;
+    right: 10%;
+    font-size: 5rem;
+    text-align: center;
+}

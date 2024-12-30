@@ -1,0 +1,243 @@
+body {
+    background: linear-gradient(45deg, #121212 25%, #2b2b2b 50%, #121212 75%), url('winter-forest-snow-moewalls-com.mp4');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fefefe;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    animation: waveBackground 15s linear infinite; /* Animation for wave movement */
+}
+
+@keyframes waveBackground {
+    0% {
+        background-position: 0 0, center;
+    }
+    100% {
+        background-position: 200% 0, center;
+    }
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: #00f9ff;
+    font-size: 2rem;
+    opacity: 0.8;
+    animation: snowfall 7s linear infinite;
+    animation-delay: calc(-1s * var(--snowflake-speed));
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.bells {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: #ff007f;
+    animation: swing 2s ease-in-out infinite;
+}
+
+@keyframes swing {
+    0%, 100% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-50%) rotate(15deg);
+    }
+}
+
+.container {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0px 10px 30px rgba(0, 255, 255, 0.5);
+    width: 450px;
+    text-align: center;
+    border: 2px solid #00f9ff;
+    transition: box-shadow 0.3s ease;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff007f;
+    text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+    transition: text-shadow 0.3s ease;
+}
+
+h1:hover {
+    text-shadow: 0 0 20px #ff007f, 0 0 40px #ff007f;
+}
+
+.futuristic-clock {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #00f9ff;
+    text-shadow: 0 0 10px #00f9ff, 0 0 20px #00f9ff;
+    letter-spacing: 3px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 100%;
+}
+
+input[type="text"],
+input[type="datetime-local"] {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #1a1a1a;
+    color: #00f9ff;
+    font-size: 16px;
+    outline: none;
+    width: 90%;
+    max-width: none;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="datetime-local"]:focus {
+    background: #2a2a2a;
+    box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+    color: #ff007f;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    background-color: #00f9ff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00f9ff, 0 0 15px #00f9ff;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+    box-shadow: 0 0 15px #ff007f, 0 0 25px #ff007f;
+    transform: scale(1.1);
+}
+
+input[type="datetime-local"]::-moz-calendar-picker-indicator {
+    background-color: #00f9ff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00f9ff, 0 0 15px #00f9ff;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+input[type="datetime-local"]::-moz-calendar-picker-indicator:hover {
+    box-shadow: 0 0 15px #ff007f, 0 0 25px #ff007f;
+    transform: scale(1.1);
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #ff007f;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.8);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff4f99;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 127, 1);
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#todo-list li {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    color: #fefefe;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#todo-list li button {
+    background: none;
+    border: none;
+    color: #ff007f;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#todo-list li button:hover {
+    color: #ff4f99;
+}
+
+.snowman,
+.santa {
+    position: absolute;
+    bottom: 20px;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.snowman {
+    left: 10%;
+}
+
+.santa {
+    right: 10%;
+}
+
+input[type="text"],
+input[type="datetime-local"] {
+    background: #1a1a1a;
+    color: #00f9ff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #00f9ff;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="datetime-local"]:focus {
+    box-shadow: 0 0 20px #ff007f;
+    color: #ff007f;
+}
+
+button:focus,
+input[type="text"]:focus,
+input[type="datetime-local"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+}

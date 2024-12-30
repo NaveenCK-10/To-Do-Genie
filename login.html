@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/index1.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form action="/login" method="post">
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="your@email.com" required />
+        
+      </div>
+      <div class="form-control">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Enter your password" required />
+        <span id="password-strength">Password strength:</span>
+      </div>
+      <p id="password-strength"></p>
+      <button class="btn" type="submit">Login</button>
+      <p class="text">Don't have an account? <a href="/register.html">Register</a></p>
+    </form>
+  </div>
+  <div class="snowflake">❄️</div>
+<div class="snowflake">❄️</div>
+<div class="snowflake">❄️</div>
+<div class="snowflake">❄️</div>
+<div class="snowflake">❄️</div>
+
+<script>
+  // Password Strength Checker
+document.getElementById('password').addEventListener('input', function () {
+    const password = this.value;
+    const strengthIndicator = document.getElementById('password-strength');
+    const strength = getPasswordStrength(password);
+
+    // Update the strength indicator text and class
+    if (strength === 'Weak') {
+        strengthIndicator.textContent = 'Password strength: Weak';
+        strengthIndicator.className = 'password-strength weak';
+    } else if (strength === 'Moderate') {
+        strengthIndicator.textContent = 'Password strength: Moderate';
+        strengthIndicator.className = 'password-strength moderate';
+    } else if (strength === 'Strong') {
+        strengthIndicator.textContent = 'Password strength: Strong';
+        strengthIndicator.className = 'password-strength strong';
+    } else {
+        strengthIndicator.textContent = 'Password strength: ';
+        strengthIndicator.className = 'password-strength';
+    }
+});
+
+// Function to determine password strength
+function getPasswordStrength(password) {
+    if (password.length < 6) {
+        return 'Weak';
+    } else if (password.length >= 6 && !/[A-Z]/.test(password) && !/[!@#$%^&*]/.test(password)) {
+        return 'Moderate';
+    } else if (password.length >= 8 && /[A-Z]/.test(password) && /[!@#$%^&*]/.test(password)) {
+        return 'Strong';
+    } else {
+        return 'Weak';
+    }
+}
+
+</script>
+
+</body>
+</html>
